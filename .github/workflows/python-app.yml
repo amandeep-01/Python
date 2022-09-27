@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'
+        description: 'enter first value '
         required: true
-        default: 'warning'
+        default: 34
       tags:
-        description: 'Test scenario tags'
+        description: 'enter second value'
         required: true
 env:
   LEVEL: ${{ inputs.logLevel }}
