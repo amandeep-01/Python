@@ -1,3 +1,4 @@
-a=23
-b=44
-Print(a)
+import sys
+a=int(sys.argv[1])
+b=int(sys.argv[2])
+print(a+b)

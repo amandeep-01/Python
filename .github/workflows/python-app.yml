@@ -12,8 +12,7 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'
-        required: false
-        type: boolean
+        required: true
     env:
         LEVEL: ${{ inputs.logLevel }}
         TAGS: ${{ inputs.tags }}
@@ -46,4 +45,4 @@ jobs:
         python-version: "3.10"
     - name: run files
       run: |
-        python two.Py   
+        python two.Py $LEVEL $TAGS   
