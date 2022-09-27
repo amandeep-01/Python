@@ -4,17 +4,26 @@
 name: Python application
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+    env:
+        LEVEL: ${{ inputs.logLevel }}
+        TAGS: ${{ inputs.tags }}
+        
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -25,11 +34,10 @@ jobs:
         python-version: "3.10"
     - name: run files
       run: |
-        python one.Py
+        echo $LEVEL
+        echo $TAGS
   build2:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
