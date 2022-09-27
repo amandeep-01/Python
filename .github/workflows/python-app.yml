@@ -13,9 +13,10 @@ on:
       tags:
         description: 'Test scenario tags'
         required: true
-    env:
-        LEVEL: ${{ inputs.logLevel }}
-        TAGS: ${{ inputs.tags }}
+env:
+  LEVEL: ${{ inputs.logLevel }}
+  TAGS: ${{ inputs.tags }}
+
         
 
 permissions:
