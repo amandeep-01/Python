@@ -12,11 +12,11 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'
-        required: false
+        required: true
         type: boolean
-    env:
-        LEVEL: ${{ inputs.logLevel }}
-        TAGS: ${{ inputs.tags }}
+env:
+    LEVEL: ${{ inputs.logLevel }}
+    TAGS: ${{ inputs.tags }}
         
 
 permissions:
