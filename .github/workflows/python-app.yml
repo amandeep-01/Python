@@ -15,7 +15,7 @@ on:
         required: true
 env:
   LEVEL: ${{ inputs.number1 }}
-  TAGS: ${{ inputs.number2 }}
+  TAG: ${{ inputs.number2 }}
 
         
 
