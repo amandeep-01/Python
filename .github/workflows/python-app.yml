@@ -6,16 +6,16 @@ name: Python application
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
+      number1:
         description: 'enter first value '
         required: true
         default: 34
-      tags:
+      number2:
         description: 'enter second value'
         required: true
 env:
-  LEVEL: ${{ inputs.logLevel }}
-  TAGS: ${{ inputs.tags }}
+  LEVEL: ${{ inputs.number1 }}
+  TAGS: ${{ inputs.number2 }}
 
         
 
@@ -34,8 +34,7 @@ jobs:
         python-version: "3.10"
     - name: run files
       run: |
-        echo $LEVEL
-        echo $TAGS
+        python one.Py
         python two.Py $LEVEL $TAGS   
  
        
