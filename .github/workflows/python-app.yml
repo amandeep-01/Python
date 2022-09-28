@@ -35,6 +35,6 @@ jobs:
     - name: run files
       run: |
         python one.Py
-        python two.Py $LEVEL $TAGS   
+        python two.Py $LEVEL $TAG   
  
        
